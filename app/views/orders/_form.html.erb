@@ -12,6 +12,28 @@
   <% end %>
 
   <div class="actions">
-    <%= f.submit %>
+    <table>
+      <tr>
+        <td><%= f.label :person_name, "Your Name:" %></td>
+        <td><%= f.text_field :person_name %></td>
+      </tr>
+      <tr>
+        <td><%= f.label :person_userid, "Your GHC User ID:" %></td>
+        <td><%= f.text_field :person_userid %></td>
+      </tr>
+      <tr>
+        <td><%= f.label :num_tofu, "# Tofu Sandwiches:" %></td>
+        <td><%= f.select :num_tofu, [1..5] %></td>
+      </tr>
+      <tr>
+        <td><%= f.label :num_chicken, "# Chicken Sandwiches:" %></td>
+        <td><%= f.select :num_chicken, [1..5] %></td>
+      </tr>
+      <tr>
+        <td><%= f.label :num_pork, "# Pork Sandwiches:" %></td>
+        <td><%= f.select :num_pork, [1..5] %></td>
+      </tr>
+      <tr><td>(Maximum of 3 sandwiches, please)</td></tr>
+    </table>
   </div>
 <% end %>
