@@ -1,0 +1,860 @@
+/* This is all largely swiped from the Firefox defaults */
+
+html, div, map, dt, isindex, form {
+  display: block;
+}
+
+body {
+  display: block;
+  margin: 8px;
+}
+
+p, dl, multicol {
+  display: block;
+  margin: 1em 0;
+}
+
+dd {
+  display: block;
+  -moz-margin-start: 40px;
+}
+
+blockquote {
+  display: block;
+  margin: 1em 40px;
+}
+
+address {
+  display: block;
+  font-style: italic;
+}
+
+center {
+  display: block;
+  text-align: -moz-center;
+}
+
+blockquote[type=cite] {
+  display: block;
+  margin: 1em 0px;
+  -moz-padding-start: 1em;
+  -moz-border-start: solid;
+  border-color: blue;
+  border-width: thin;
+}
+
+h1 {
+  display: block;
+  font-size: 2em;
+  font-weight: bold;
+  margin: .67em 0;
+}
+
+h2 {
+  display: block;
+  font-size: 1.5em;
+  font-weight: bold;
+  margin: .83em 0;
+}
+
+h3 {
+  display: block;
+  font-size: 1.17em;
+  font-weight: bold;
+  margin: 1em 0;
+}
+
+h4 {
+  display: block;
+  font-weight: bold;
+  margin: 1.33em 0;
+}
+
+h5 {
+  display: block;
+  font-size: 0.83em;
+  font-weight: bold;
+  margin: 1.67em 0;
+}
+
+h6 {
+  display: block;
+  font-size: 0.67em;
+  font-weight: bold;
+  margin: 2.33em 0;
+}
+
+listing {
+  display: block;
+  font-family: -moz-fixed;
+  font-size: medium;
+  white-space: pre;
+  margin: 1em 0;
+}
+
+xmp, pre, plaintext {
+  display: block;
+  font-family: -moz-fixed;
+  white-space: pre;
+  margin: 1em 0;
+}
+
+/* tables */
+
+table {
+  display: table;
+  border-spacing: 2px;
+  border-collapse: separate;
+  margin-top: 0;
+  margin-bottom: 0;
+  /* XXXldb do we want this if we're border-collapse:collapse ? */
+  -moz-box-sizing: border-box;
+  text-indent: 0;
+}
+
+table[align="left"] {
+  float: left;
+}
+
+table[align="right"] {
+  float: right;
+  text-align: start;
+}
+
+table[rules]:not([rules="none"]) {
+  border-collapse: collapse;
+}
+   
+/* caption inherits from table not table-outer */  
+caption {
+  display: table-caption;
+  text-align: center;
+  -moz-box-sizing: border-box;
+}
+
+table[align="center"] > caption {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+table[align="center"] > caption[align="left"] {
+  margin-right: 0;
+}
+
+table[align="center"] > caption[align="right"] {
+  margin-left: 0;
+}
+
+tr {
+  display: table-row;
+  vertical-align: inherit;
+}
+
+col {
+  display: table-column;
+}
+
+colgroup {
+  display: table-column-group;
+}
+
+tbody {
+  display: table-row-group;
+  vertical-align: middle;
+}
+
+thead {
+  display: table-header-group;
+  vertical-align: middle;
+}
+
+tfoot {
+  display: table-footer-group;
+  vertical-align: middle;
+}
+
+/* for XHTML tables without tbody */
+table > tr {
+  vertical-align: middle;
+}
+
+td { 
+  display: table-cell;
+  vertical-align: inherit;
+  text-align: inherit; 
+  padding: 1px;
+}
+
+th {
+  display: table-cell;
+  vertical-align: inherit;
+  font-weight: bold;
+  padding: 1px;
+}
+
+/* inlines */
+
+q:before {
+  content: open-quote;
+}
+
+q:after {
+  content: close-quote;
+}
+
+b, strong {
+  font-weight: bolder;
+}
+
+i, cite, em, var, dfn {
+  font-style: italic;
+}
+
+tt, code, kbd, samp {
+  font-family: -moz-fixed;
+}
+
+u, ins {
+  text-decoration: underline;
+}
+
+s, strike, del {
+  text-decoration: line-through;
+}
+
+blink {
+  text-decoration: blink;
+}
+
+big {
+  font-size: larger;
+}
+
+small {
+  font-size: smaller;
+}
+
+sub {
+  vertical-align: sub;
+  font-size: smaller;
+  line-height: normal;
+}
+
+sup {
+ * vertical-align: super;
+  font-size: smaller;
+ * line-height: normal;
+	bottom: 1ex;
+	height: 0;
+	line-height: 1;
+	vertical-align: baseline;
+	_vertical-align: bottom;
+	position: relative;
+}
+
+nobr {
+  white-space: nowrap;
+}
+
+/* titles */
+abbr[title], acronym[title] {
+  border-bottom: dotted 1px;
+}
+
+/* lists */
+
+ul, menu, dir {
+  display: block;
+  list-style-type: disc;
+  margin: 1em 0;
+  -moz-padding-start: 40px;
+}
+
+ol {
+  display: block;
+  list-style-type: decimal;
+  margin: 1em 0;
+  -moz-padding-start: 40px;
+}
+
+li {
+  display: list-item;
+}
+
+/* nested lists have no top/bottom margins */
+ul ul,   ul ol,   ul dir,   ul menu,   ul dl,
+ol ul,   ol ol,   ol dir,   ol menu,   ol dl,
+dir ul,  dir ol,  dir dir,  dir menu,  dir dl,
+menu ul, menu ol, menu dir, menu menu, menu dl,
+dl ul,   dl ol,   dl dir,   dl menu,   dl dl {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+/* 2 deep unordered lists use a circle */
+ol ul,   ul ul,   menu ul,   dir ul,
+ol menu, ul menu, menu menu, dir menu,
+ol dir,  ul dir,  menu dir,  dir dir {
+  list-style-type: circle;
+}
+
+/* 3 deep (or more) unordered lists use a square */
+ol ol ul,     ol ul ul,     ol menu ul,     ol dir ul,
+ol ol menu,   ol ul menu,   ol menu menu,   ol dir menu,
+ol ol dir,    ol ul dir,    ol menu dir,    ol dir dir,
+ul ol ul,     ul ul ul,     ul menu ul,     ul dir ul,
+ul ol menu,   ul ul menu,   ul menu menu,   ul dir menu,
+ul ol dir,    ul ul dir,    ul menu dir,    ul dir dir,
+menu ol ul,   menu ul ul,   menu menu ul,   menu dir ul,
+menu ol menu, menu ul menu, menu menu menu, menu dir menu,
+menu ol dir,  menu ul dir,  menu menu dir,  menu dir dir,
+dir ol ul,    dir ul ul,    dir menu ul,    dir dir ul,
+dir ol menu,  dir ul menu,  dir menu menu,  dir dir menu,
+dir ol dir,   dir ul dir,   dir menu dir,   dir dir dir {
+  list-style-type: square;
+}
+
+/* focusable content: anything w/ tabindex >=0 is focusable */
+abbr:focus, acronym:focus, address:focus, b:focus,
+base:focus, big:focus, blockquote:focus, br:focus, canvas:focus, caption:focus,
+center:focus, cite:focus, code:focus, col:focus, colgroup:focus, dd:focus,
+del:focus, dfn:focus, dir:focus, div:focus, dl:focus, dt:focus, em:focus,
+fieldset:focus, font:focus, form:focus, h1:focus, h2:focus, h3:focus, h4:focus,
+h5:focus, h6:focus, hr:focus, i:focus, img:focus, ins:focus, 
+kbd:focus, label:focus, legend:focus, li:focus, link:focus, menu:focus, 
+ol:focus, p:focus, pre:focus, q:focus, s:focus, samp:focus, 
+small:focus, span:focus, strike:focus, strong:focus, sub:focus, sup:focus, 
+table:focus, tbody:focus, td:focus, tfoot:focus, th:focus, thead:focus, 
+tr:focus, tt:focus, u:focus, ul:focus, var:focus {
+  /* Don't specify the outline-color, we should always use initial value. */
+   outline: 1px dotted;
+}
+
+/* hidden elements */
+area, base, basefont, head, meta, script, style, title,
+noembed, param {
+   display: none;
+}
+
+*|*::-moz-fieldset-content {
+  display: block;
+  height: 100%;   /* Need this so percentage heights of kids work right */
+}
+
+/* miscellaneous form elements */
+
+fieldset > legend {
+  padding-left: 2px;
+  padding-right: 2px;
+  border: none;
+  position: static;
+  float: none;
+  width: -moz-fit-content;
+  min-width: 0;
+  max-width: none;
+  height: auto;
+  min-height: 0;
+  max-height: none;
+  white-space: nowrap;
+}
+
+legend {
+  display: block;
+}
+
+fieldset {
+  display: block;
+  margin-left: 2px;
+  margin-right: 2px;
+  padding: 0.35em 0.625em 0.75em;
+  border: 2px groove ThreeDFace;
+}
+
+label {
+  cursor: default;
+}
+
+/* default inputs, text inputs, and selects */
+
+/* Note: Values in nsNativeTheme IsWidgetStyled function 
+   need to match textfield background/border values here */
+
+input {
+  -moz-appearance: textfield;
+  /* The sum of border-top, border-bottom, padding-top, padding-bottom
+     must be the same here, for buttons, and for <select> (including its
+     internal padding magic) */
+  padding: 1px 0 1px 0;
+  border: 2px inset ThreeDFace;
+  background-color: -moz-Field;
+  color: -moz-FieldText;
+  font: -moz-field;
+  text-rendering: optimizeLegibility;
+  line-height: normal !important;
+  text-align: start;
+  text-transform: none;
+  word-spacing: normal;
+  letter-spacing: normal;
+  cursor: text;
+  -moz-binding: url("chrome://global/content/platformHTMLBindings.xml#inputFields");
+  text-indent: 0;
+  -moz-user-select: text;
+  text-shadow: none;
+}
+
+input > .anonymous-div {
+  word-wrap: normal !important;
+  /* Make the line-height equal to the available height */
+  line-height: -moz-block-height;
+}
+
+textarea {
+  margin: 1px 0 1px 0;
+  border: 2px inset ThreeDFace;
+  background-color: -moz-Field;
+  color: -moz-FieldText;
+  font: medium -moz-fixed;
+  text-rendering: optimizeLegibility;
+  text-align: start;
+  text-transform: none;
+  word-spacing: normal;
+  letter-spacing: normal;
+  vertical-align: text-bottom;
+  cursor: text;
+  -moz-binding: url("chrome://global/content/platformHTMLBindings.xml#textAreas");
+  -moz-appearance: textfield-multiline;
+  text-indent: 0;
+  -moz-user-select: text;
+  text-shadow: none;
+  word-wrap: break-word;
+}
+
+textarea > scrollbar {
+  cursor: default;
+}
+
+textarea > .anonymous-div,
+input > .anonymous-div {
+  white-space: pre;
+  overflow: auto;
+  border: 0px !important;
+  /* The 1px horizontal padding is for parity with Win/IE */
+  padding: 0px 1px;
+  margin: 0px;
+  /* XXXldb I'm not sure if we really want the 'text-decoration: inherit',
+     but it's needed to make 'text-decoration' "work" on text inputs. */
+  text-decoration: inherit;
+  ime-mode: inherit;
+}
+
+textarea > .anonymous-div.wrap,
+input > .anonymous-div.wrap {
+  white-space: pre-wrap;
+}
+textarea > .anonymous-div.inherit-overflow,
+input > .anonymous-div.inherit-overflow {
+  overflow: inherit;
+}
+
+input:-moz-read-write,
+textarea:-moz-read-write {
+  -moz-user-modify: read-write !important;
+}
+
+select {
+  margin: 0;
+  border-color: ThreeDFace;
+  background-color: -moz-Combobox;
+  color: -moz-ComboboxText;
+  font: -moz-list;
+  line-height: normal !important;
+  white-space: nowrap !important;
+  word-wrap: normal !important;
+  text-align: start; 
+  cursor: default;
+  -moz-box-sizing: border-box;
+  -moz-user-select: none;
+  -moz-appearance: menulist;
+  border-width: 2px;
+  border-style: inset;
+  text-indent: 0;
+  overflow: -moz-hidden-unscrollable;
+  text-shadow: none;
+}
+
+/* Need the "select[size][multiple]" selector to override the settings on
+   'select[size="1"]', eg if one has <select size="1" multiple> */
+   
+select[size],
+select[multiple],
+select[size][multiple] {
+  /* Different alignment and padding for listbox vs combobox */
+  background-color: -moz-Field;
+  color: -moz-FieldText;
+  vertical-align: text-bottom;
+  padding: 1px 0 1px 0;
+  -moz-appearance: listbox;
+}
+
+select[size="0"],
+select[size="1"] {
+  /* Except this is not a listbox */
+  background-color: -moz-Combobox;
+  color: -moz-ComboboxText;
+  vertical-align: baseline;
+  padding: 0;
+  -moz-appearance: menulist;
+}
+
+select > input[type="button"] {
+  width: 12px;
+  height: 12px;
+  white-space: nowrap;
+  position: static !important;
+  background-image: url("arrow.gif") !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  -moz-appearance: menulist-button;
+
+  /* Make sure to size correctly if the combobox has a non-auto height. */
+  height: 100% ! important;
+  -moz-box-sizing: border-box ! important;
+
+  /*
+    Make sure to align properly with the display frame.  Note that we
+    want the baseline of the combobox to match the baseline of the
+    display frame, so the dropmarker is what gets the vertical-align.
+  */
+  vertical-align: top !important;
+}
+
+select > input[type="button"]:active {
+  background-image: url("arrowd.gif") !important;
+}
+
+select:empty {
+  width: 2.5em;
+}
+
+*|*::-moz-display-comboboxcontrol-frame {
+  overflow: -moz-hidden-unscrollable;
+  /* This top/bottom padding plus the combobox top/bottom border need to
+     add up to the top/bottom borderpadding of text inputs and buttons */ 
+  padding-top: 1px;
+  padding-bottom: 1px;
+  -moz-padding-start: 4px;
+  -moz-padding-end: 0;
+  background-color: inherit;
+  color: inherit;
+  white-space: nowrap;
+  text-align: inherit;
+  -moz-user-select: none;
+  /* Make sure to size correctly if the combobox has a non-auto height. */
+  height: 100% ! important;
+  -moz-box-sizing: border-box ! important;
+}
+
+select::-moz-scrolled-content {
+  display: block !important;
+}
+
+option {
+  display: block;
+  float: none !important;
+  position: static !important;
+  min-height: 1em;
+  line-height: normal !important;
+  -moz-user-select: none;
+  text-indent: 0;
+  white-space: nowrap !important;
+  word-wrap: normal !important;
+}
+
+select > option {
+  padding-top : 0;
+  padding-bottom: 0;
+  -moz-padding-start: 3px;
+  -moz-padding-end: 5px;
+}
+
+option:checked {
+  background-color: -moz-html-cellhighlight !important;
+  color: -moz-html-cellhighlighttext !important;
+}
+
+select:focus > option:checked,
+select:focus > optgroup > option:checked {
+  background-color: Highlight ! important;
+  color: HighlightText ! important;
+}
+
+optgroup {
+  display: block;
+  float: none !important;
+  position: static !important;
+  font: -moz-list;
+  line-height: normal !important;
+  font-style: italic;
+  font-weight: bold;
+  font-size: inherit;
+  -moz-user-select: none;
+  text-indent: 0;
+  white-space: nowrap !important;
+  word-wrap: normal !important;
+}
+
+optgroup > option {
+  -moz-padding-start: 20px;
+  font-style: normal;
+  font-weight: normal;
+}
+
+optgroup:before {
+  display: block;
+  content: attr(label);
+}
+
+*|*::-moz-dropdown-list {
+  z-index: 2147483647;
+  background-color: inherit;
+  -moz-user-select: none;
+  position: static !important;
+  float: none !important;
+
+  /*
+   * We can't change the padding here, because that would affect our
+   * intrinsic width, since we scroll.  But at the same time, we want
+   * to make sure that our left border+padding matches the left
+   * border+padding of a combobox so that our scrollbar will line up
+   * with the dropmarker.  So set our left border to 2px.
+   */
+  border: 1px outset black !important;
+  border-left-width: 2px ! important;
+} 
+
+input[disabled],
+textarea[disabled],
+option[disabled],
+optgroup[disabled],
+select[disabled] {
+  -moz-user-input: disabled;
+  -moz-user-focus: ignore;
+  color: GrayText;
+  background-color: ThreeDFace;
+  cursor: inherit;
+}
+
+option[disabled],
+optgroup[disabled] {
+  background-color: transparent;
+}
+
+/* hidden inputs */
+input[type="hidden"] {
+  -moz-appearance: none;
+  display: none !important;
+  padding: 0;
+  border: 0;
+  cursor: auto;
+  -moz-user-focus: ignore;
+  -moz-binding: none;
+}
+
+/* image buttons */
+input[type="image"] {
+  -moz-appearance: none;
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  font-family: sans-serif;
+  font-size: small;
+  cursor: pointer;
+  -moz-binding: none;
+}
+
+input[type="image"][disabled] {
+  cursor: inherit;
+}
+
+input[type="image"]:focus {
+  /* Don't specify the outline-color, we should always use initial value. */
+  outline: 1px dotted;
+}
+
+/* file selector */
+input[type="file"] {
+  -moz-appearance: none;
+  white-space: nowrap;
+  cursor: default;
+  -moz-binding: none;
+
+  padding: 0 !important;
+  border-style: none !important;
+}
+
+input[type="file"] > input[type="text"] {
+  border-color: inherit;
+  background-color: inherit;
+  color: inherit;
+  font-size: inherit;
+  letter-spacing: inherit;
+}
+
+/* button part of file selector */
+input[type="file"] > input[type="button"] {
+  height: inherit;
+  font-size: inherit;
+  letter-spacing: inherit;
+}
+
+/* radio buttons */
+input[type="radio"] {
+  -moz-appearance: radio;
+  margin: 3px 3px 0px 5px;
+  -moz-border-radius: 100% !important;
+}
+
+/* check boxes */
+input[type="checkbox"] {
+  -moz-appearance: checkbox;
+  margin: 3px 3px 3px 4px;
+  -moz-border-radius: 0 !important;
+}
+
+/* common features of radio buttons and check boxes */
+
+/* NOTE: The width, height, border-width, and padding here must all
+   add up the way nsFormControlFrame::GetIntrinsic(Width|Height)
+   expects them to, or they will not come out with total width equal
+   to total height on sites that set their 'width' or 'height' to 'auto'.
+   (Should we maybe set !important on width and height, then?)  */
+input[type="radio"],
+input[type="checkbox"] {
+  -moz-box-sizing: border-box;
+  width: 13px;
+  height: 13px;
+  cursor: default;
+  padding: 0 !important;
+  -moz-binding: none;
+  /* same colors as |input| rule, but |!important| this time. */
+  background-color: -moz-Field ! important;
+  color: -moz-FieldText ! important;
+  border: 2px inset ThreeDFace ! important;
+}
+
+input[type="radio"][disabled],
+input[type="radio"][disabled]:active,
+input[type="radio"][disabled]:hover,
+input[type="radio"][disabled]:hover:active,
+input[type="checkbox"][disabled],
+input[type="checkbox"][disabled]:active,
+input[type="checkbox"][disabled]:hover,
+input[type="checkbox"][disabled]:hover:active {
+  padding: 1px;
+  border: 1px inset ThreeDShadow ! important;
+  /* same as above, but !important */
+  color: GrayText ! important;
+  background-color: ThreeDFace ! important;
+  cursor: inherit; 
+}
+
+input[type="checkbox"]:focus,
+input[type="radio"]:focus {
+  border-style: groove !important;
+}
+
+input[type="checkbox"]:hover:active,
+input[type="radio"]:hover:active {
+  background-color: ThreeDFace ! important;
+  border-style: inset !important;
+}
+
+/* buttons */
+
+/* Note: Values in nsNativeTheme IsWidgetStyled function 
+   need to match button background/border values here */
+
+button, 
+input[type="reset"],
+input[type="button"],
+input[type="submit"] { 
+  -moz-appearance: button;
+  /* The sum of border-top, border-bottom, padding-top, padding-bottom
+     must be the same here, for text inputs, and for <select>.  For
+     buttons, make sure to include the -moz-focus-inner border/padding. */
+  padding: 0px 6px 0px 6px;
+  border: 2px outset ButtonFace;
+  background-color: ButtonFace;
+  color: ButtonText; 
+  font: -moz-button;
+  line-height: normal !important;
+  white-space: pre;
+  cursor: default;
+  -moz-box-sizing: border-box;
+  -moz-user-select: none;
+  -moz-binding: none;
+  text-align: center;
+  text-shadow: none;
+}
+
+button {
+  /* Buttons should lay out like "normal" html, mostly */
+  white-space: inherit;
+  text-indent: 0;
+}
+
+*|*::-moz-button-content {
+  display: block;
+}
+
+button:hover,
+input[type="reset"]:hover,
+input[type="button"]:hover,
+input[type="submit"]:hover {
+  background-color: -moz-buttonhoverface;
+  color: -moz-buttonhovertext;
+}
+
+button:active:hover,
+input[type="reset"]:active:hover,
+input[type="button"]:active:hover,
+input[type="submit"]:active:hover {
+  padding: 0px 5px 0px 7px;
+  border-style: inset;
+  background-color: ButtonFace;
+  color: ButtonText;
+}
+
+button::-moz-focus-inner,
+input[type="reset"]::-moz-focus-inner,
+input[type="button"]::-moz-focus-inner,
+input[type="submit"]::-moz-focus-inner,
+input[type="file"] > input[type="button"]::-moz-focus-inner {
+  padding: 0px 2px 0px 2px;
+  border: 1px dotted transparent;
+}
+
+button:focus::-moz-focus-inner,
+input[type="reset"]:focus::-moz-focus-inner,
+input[type="button"]:focus::-moz-focus-inner,
+input[type="submit"]:focus::-moz-focus-inner,
+input[type="file"] > input[type="button"]:focus::-moz-focus-inner {
+  border-color: ButtonText;
+}
+
+button[disabled]:active, button[disabled],
+input[type="reset"][disabled]:active,
+input[type="reset"][disabled],
+input[type="button"][disabled]:active,
+input[type="button"][disabled],
+select[disabled] > input[type="button"],
+select[disabled] > input[type="button"]:active,
+input[type="submit"][disabled]:active,
+input[type="submit"][disabled] {
+  /* The sum of border-top, border-bottom, padding-top, padding-bottom
+     must be the same here and for text inputs */
+  padding: 0px 6px 0px 6px;
+  border: 2px outset ButtonFace;
+  color: GrayText;
+  cursor: inherit; 
+}
