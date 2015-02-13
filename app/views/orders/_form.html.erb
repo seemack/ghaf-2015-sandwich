@@ -22,16 +22,16 @@
         <td><%= f.text_field :person_userid %></td>
       </tr>
       <tr>
-        <td><%= f.label :num_tofu, "# Tofu Sandwiches:" %></td>
-        <td><%= f.select :num_tofu, [1..5] %></td>
+        <td>&nbsp;&nbsp;<%= f.label :num_tofu, "# Tofu Sandwiches:" %></td>
+        <td><%= f.select :num_tofu, %w(0 1 2 3) %></td>
       </tr>
       <tr>
-        <td><%= f.label :num_chicken, "# Chicken Sandwiches:" %></td>
-        <td><%= f.select :num_chicken, [1..5] %></td>
+        <td>&nbsp;&nbsp;<%= f.label :num_chicken, "# Chicken Sandwiches:" %></td>
+        <td><%= f.select :num_chicken, %w(0 1 2 3) %></td>
       </tr>
       <tr>
-        <td><%= f.label :num_pork, "# Pork Sandwiches:" %></td>
-        <td><%= f.select :num_pork, [1..5] %></td>
+        <td>&nbsp;&nbsp;<%= f.label :num_pork, "# Pork Sandwiches:" %></td>
+        <td><%= f.select :num_pork, %w(0 1 2 3) %></td>
       </tr>
       <tr><td>(Maximum of 3 sandwiches, please)</td></tr>
     </table>

@@ -1,0 +1,57 @@
+$main-color: #1E7B12;
+$bottom-color: #EEE;
+
+@mixin rounded-corners($radius) {
+  border-radius: $radius;
+  -moz-border-radius: $radius;
+  -webkit-border-radius: $radius;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #FFF;
+  font-family: verdana;
+  font-size: 20px;
+}
+
+#header {
+  background-color: $main-color;
+  color: #FFF;
+  padding: 4px 100px;
+  border-bottom: solid 5px darken($main-color, 10%);
+
+  h1 {
+    font-family: "Special Elite";
+    font-size: 36px;
+  }
+}
+
+#main-text {
+  padding: 20px;
+  p {
+    margin: 15px;
+  }
+}
+
+#vn-sand {
+  padding: 4px 100px;
+  background-color: $bottom-color;
+  border-top: solid 5px darken($main-color, 10%);
+}
+
+#cancel {
+  color: #BCD;
+}
+
+a {
+  color: $main-color;
+  text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+#container {
+  margin: 0 100px;
+}
