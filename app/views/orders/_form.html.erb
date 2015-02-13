@@ -15,7 +15,7 @@
     <table>
       <tr>
         <td><%= f.label :person_name, "Your Name:" %></td>
-        <td><%= f.text_field :person_name %></td>
+        <td><%= f.text_field :person_name, size: 25 %></td>
       </tr>
       <tr>
         <td><%= f.label :person_userid, "Your GHC User ID:" %></td>
@@ -33,7 +33,13 @@
         <td>&nbsp;&nbsp;<%= f.label :num_pork, "# Pork Sandwiches:" %></td>
         <td><%= f.select :num_pork, %w(0 1 2 3) %></td>
       </tr>
-      <tr><td>(Maximum of 3 sandwiches, please)</td></tr>
+      <tr><td>&nbsp;&nbsp;(Maximum of 3 sandwiches, please)</td></tr>
+      <tr>
+        <td><%= f.label :comment, "Comments?" %></td>
+        <td><%= f.text_area :comment, cols: 25, rows: 3 %></td>
+      </tr>
     </table>
+    <br />
+    <%= f.submit "Place Order" %>
   </div>
 <% end %>

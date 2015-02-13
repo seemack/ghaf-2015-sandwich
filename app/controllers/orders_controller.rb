@@ -1,6 +1,9 @@
 class OrdersController < ApplicationController
   before_action :set_order, only: [:show, :edit, :update, :destroy]
 
+  def thanks
+  end
+
   # GET /orders
   # GET /orders.json
   def index
@@ -28,7 +31,7 @@ class OrdersController < ApplicationController
 
     respond_to do |format|
       if @order.save
-        format.html { redirect_to @order, notice: 'Order was successfully created.' }
+        format.html { redirect_to "/thanks", notice: 'Sandwich was successfully ordered.' }
         format.json { render :show, status: :created, location: @order }
       else
         format.html { render :new }
@@ -69,6 +72,6 @@ class OrdersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def order_params
-      params[:order]
+      params[:order].permit(:person_name, :person_userid, :num_tofu, :num_chicken, :num_pork)
     end
 end
