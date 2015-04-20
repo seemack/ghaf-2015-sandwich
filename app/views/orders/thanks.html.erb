@@ -1,15 +1,15 @@
 <div id='header'>
-<h1>GHAF March Meeting</h1>
+<h1>GHAF <%= MTG_DATE.strftime("%B") %> Meeting</h1>
 <h3>
-Where: GHQ, Room W275<br />
-When: Tuesday, March 3, 2015, 12-2pm
+Where: <%= MTG_ROOM %><br />
+When: <%= MTG_DATE.strftime("%A, %B %-d, %Y") %>, <%= MTG_TIME %>
 </h3>
 </div>
 
 <div id='main-text'>
 <p>Your sandwich has been ordered.</p>
 
-<p>See you Tuesday, March 3rd, at noon!</p>
+<p>See you on <%= MTG_DATE.strftime("%B #{MTG_DAY.ordinalize}") %>!</p>
 </div>
 
 <div id='vn-sand'>

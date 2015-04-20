@@ -1,21 +1,27 @@
 <div id='header'>
-<h1>GHAF March Meeting</h1>
+<h1>GHAF <%= MTG_DATE.strftime("%B") %> Meeting</h1>
 
-<h2>Please join us for the Group Health Analyst Forum March 2015 meeting!</h2>
+<h2>Please join us for the Group Health Analyst Forum <%= MTG_DATE.strftime("%B %Y") %> meeting!</h2>
 <h3>
-Where: GHQ, Room W275<br />
-When: Tuesday, March 3, 2015, 12-2pm
+Where: <%= MTG_ROOM %><br />
+When: <%= MTG_DATE.strftime("%A, %B %-d, %Y") %>, <%= MTG_TIME %>
 </h3>
 </div>
 
 <div id='main-text'>
-<p>The folks in Informatics EDW have offered to give an overview of their department, how they’re structured and who the current players are in creating the data we all use and depend on.</p>
+<p>
+	The Live Wires from the Enterprise Data Warehouse crew are excited to share
+	with us the work they've done in building the Pharmacy Detail area.
+	They're bringing an all-star list of presenters, including our very own:
 
-<p>Rhonda Ogilvie & Ted Schill will:
+	<br />
+
 	<ul>
-		<li>give an intro to the EDW</li>
-		<li>present the EDW project roadmap and 2015 goals</li>
-		<li>offer a Q&A (so bring your questions!)</li>
+		<li>Becky Cox</li>
+		<li>Sapna Wa</li>
+		<li>Jim Davis</li>
+		<li>Craig Patnode</li>
+		<li>Larry Scheurich</li>
 	</ul>
 </p>
 
@@ -23,10 +29,9 @@ When: Tuesday, March 3, 2015, 12-2pm
 </div>
 
 <div id='vn-sand'>
-<h3>
-	Heard about the Vietnamese sandwiches? <br />
-	Sorry, it's too late to order this time. <br />
-	But stay tuned for the next GHAF meeting!
-</h3>
-
+	<% if MTG_SANDWICH == "true" %>
+		<%= render "sandwich_yes" %>
+	<% else %>
+		<%= render "sandwich_no" %>
+	<% end %>
 </div>
